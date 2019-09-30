@@ -23,6 +23,8 @@ public class MechController : MonoBehaviour
         mech.Move(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
         HandleCam();
         mech.AimTowards(FindAim());
+        if (Input.GetMouseButton(0))
+            mech.Attack(AttackType.primary);
     }
 
     private Vector3 FindAim()

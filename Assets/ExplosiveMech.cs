@@ -24,7 +24,15 @@ public class ExplosiveMech : MechActor
     }
     public override void Attack(AttackType attackType)
     {
-
+        switch (attackType)
+        {
+            case AttackType.primary:
+                foreach (PrimaryWeapon weapon in primaryWeapons)
+                {
+                    weapon.Fire();
+                }
+                break;
+        }
     }
     public override void Move(Vector3 direction)
     {
